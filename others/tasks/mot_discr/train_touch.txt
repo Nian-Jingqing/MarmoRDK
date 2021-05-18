@@ -1,0 +1,6 @@
+Condition	Frequency	Block	Timing File	TaskObject#1			TaskObject#2		TaskObject#3		TaskObject#4			TaskObject#5				TaskObject#6
+1		1		1	train_touch	crc(4, [1 1 1], 1, 0, 0)	pic(SR1, 0,25,80,80)	pic(SR2, 0,25,80,80)	crc(4, [1 1 1], 1, -20, 20.22)	crc(4, [1 1 1], 1, 20, 20.22) fp(0,45)
+2		1		1	train_touch	crc(4, [1 1 1], 1, 0, 0)	mov(dots_dir1_speed5, 0,25)	mov(dots_dir10_speed5, 0,25)	crc(4, [1 1 1], 1, -20, 20.22)	crc(4, [1 1 1], 1, 20, 20.22) fp(0,25)
+
+
+		
