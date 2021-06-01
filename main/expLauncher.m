@@ -17,8 +17,8 @@
 %                       . signal stimulus (right or left ~800 ms coherent rdk at 5 possible level of orientation dispersion)
 %                       . two button until responsew with 1 second max to touch screen (demo left and right button)
 %                       . if correct response reward with water
-
-% vid/img to create :   . touch button (img)
+ 
+% vid/img to create :   . touch button (img)   
 %                       . reward button (img)
 %                       . noise (50 to 500 ms video)
 %                       . signal (300 ms video, with left or right and 5 level of difficulty)

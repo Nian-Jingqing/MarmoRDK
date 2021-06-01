@@ -53,7 +53,7 @@ expDes.fourV            =   [1:const.example_num]';
 expDes.txt_var4         =   {'example: 01','example: 02','example: 03','example: 04','example: 05',...
                              'example: 06','example: 07','example: 08','example: 09','example: 10',...
                              'example: 11','example: 12','example: 13','example: 14','example: 15',...
-                             'example: 16','example: 17','example: 18','example: 19','example: 20'};
+                             'example:  16','example: 17','example: 18','example: 19','example: 20'};
 % 01 = example 1
 % 02 = example 2
 % ...
@@ -103,11 +103,11 @@ if const.ml_material
                     if ~isdir(dir_filename2)
                         mkdir(dir_filename2)
                     end
-                    const.ml_file_vid_t1{var1,var2,var3,var4} = sprintf('%s/vid_t1.mp4',dir_filename);   % wait touch
-                    const.ml_file_vid_t2{var1,var2,var3,var4} = sprintf('%s/vid_t2.mp4',dir_filename);   % fix feedback
-                    const.ml_file_vid_t3{var1,var2,var3,var4} = sprintf('%s/vid_t3.mp4',dir_filename);   % rdk vid
-                    const.ml_file_vid_t4{var1,var2,var3,var4} = sprintf('%s/vid_t4.mp4',dir_filename);   % button response
-                    const.ml_file_vid_t5{var1,var2,var3,var4} = sprintf('%s/vid_t5.mp4',dir_filename);   % button response
+                    const.ml_file_vid_t1{var1,var2,var3,var4} = sprintf('%s/vid_t1.avi',dir_filename);   % wait touch
+                    const.ml_file_vid_t2{var1,var2,var3,var4} = sprintf('%s/vid_t2.avi',dir_filename);   % fix feedback
+                    const.ml_file_vid_t3{var1,var2,var3,var4} = sprintf('%s/vid_t3.avi',dir_filename);   % rdk vid
+                    const.ml_file_vid_t4{var1,var2,var3,var4} = sprintf('%s/vid_t4.avi',dir_filename);   % button response
+                    const.ml_file_vid_t5{var1,var2,var3,var4} = sprintf('%s/vid_t5.avi',dir_filename);   % button response
                 end
             end
         end

@@ -78,18 +78,18 @@ const.stim_ctr_X        =   vaDeg2pix(const.stim_ctr_XVal,scr);             % st
 const.stim_coords       =   [scr.x_mid-const.stim_ctr_X,...
                              scr.y_mid-const.stim_ctr_Y];                   % stimulus coordinates
 const.rdk_rad           =   vaDeg2pix(50,scr);                              % item radius
-const.dotRadSize        =   vaDeg2pix(2,scr);                               % dot size
+const.dotRadSize        =   vaDeg2pix(1,scr);                               % dot size
 const.theta_noise       =   90;                                             % noise direction (0:right, 90:up, 180:left, 270:down)
 const.kappa_noise       =   0;                                              % noise motion coherence kappa
 const.kappa_levels      =   5;                                              % kappa levels
 const.kappa_scale       =   linspace(0,10,const.kappa_levels);              % kappa values
 
-const.numDots           =   50;                                             % number of dots
+const.numDots           =   100;                                            % number of dots
 const.dotSpeed_pix      =   vaDeg2pix(50,scr);                              % speed in degree per seconds                    
-const.sigDotSpeedMulti  =   1;                                              % speed multiplication factor
-const.numMinLife        =   3;                                              % minimum life time of a dot (in frames)
+const.sigDotSpeedMulti  =   10;                                              % speed multiplication factor
+const.numMinLife        =   1;                                              % minimum life time of a dot (in frames)
 const.durMinLife        =   const.numMinLife*scr.frame_duration;            % minimum life time of a dot (in seconds)
-const.numMeanLife       =   7;                                              % mean life time of a dot (in frames)
+const.numMeanLife       =   50;                                             % mean life time of a dot (in frames)
 const.durMeanLife       =   const.numMeanLife*scr.frame_duration;           % mean life time of a dot (in seconds)
 
 for signal_direction = 1:2
@@ -123,7 +123,7 @@ const.button_out_rim_rad=   vaDeg2pix(const.button_out_rim_radVal,scr);     % in
 const.button_rim_rad    =   const.button_out_rim_rad - ...
                             (const.fix_out_rim_rad - const.fix_rim_rad);    % as a function of rim in fix bull's eye
 
-const.button_color      =   const.green;                                    % button color
+const.button_color      =   const.white;                                    % button color
 const.button_ctr_XVal   =   0;                                              % stim center X position relative screen center (dva)
 const.button_ctr_YVal   =   0;                                              % stim center Y position relative screen center (dva)
 const.button_ctr_X      =   vaDeg2pix(const.button_ctr_XVal,scr);             % stim center X position relative screen center (pixels)

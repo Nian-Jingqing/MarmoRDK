@@ -29,23 +29,24 @@ var3 = expDes.expMat(t_trial,3);    % signal kappa
 var4 = expDes.expMat(t_trial,4);    % signal example
 rdk = const.rdk{var1,var2,var3,var4};
 if const.ml_material
-    ml_vid_obj_t1 = VideoWriter(const.ml_file_vid_t1{var1,var2,var3,var4},'MPEG-4');
+    formatVid = 'Motion JPEG AVI';
+    ml_vid_obj_t1 = VideoWriter(const.ml_file_vid_t1{var1,var2,var3,var4},formatVid);
     ml_vid_obj_t1.FrameRate =   66;
 	ml_vid_obj_t1.Quality   =   100;
     
-    ml_vid_obj_t2 = VideoWriter(const.ml_file_vid_t2{var1,var2,var3,var4},'MPEG-4');
+    ml_vid_obj_t2 = VideoWriter(const.ml_file_vid_t2{var1,var2,var3,var4},formatVid);
     ml_vid_obj_t2.FrameRate =   66;
 	ml_vid_obj_t2.Quality   =   100;
     
-    ml_vid_obj_t3 = VideoWriter(const.ml_file_vid_t3{var1,var2,var3,var4},'MPEG-4');
+    ml_vid_obj_t3 = VideoWriter(const.ml_file_vid_t3{var1,var2,var3,var4},formatVid);
     ml_vid_obj_t3.FrameRate =   66;
 	ml_vid_obj_t3.Quality   =   100;
     
-    ml_vid_obj_t4 = VideoWriter(const.ml_file_vid_t4{var1,var2,var3,var4},'MPEG-4');
+    ml_vid_obj_t4 = VideoWriter(const.ml_file_vid_t4{var1,var2,var3,var4},formatVid);
     ml_vid_obj_t4.FrameRate =   66;
 	ml_vid_obj_t4.Quality   =   100;
     
-    ml_vid_obj_t5 = VideoWriter(const.ml_file_vid_t5{var1,var2,var3,var4},'MPEG-4');
+    ml_vid_obj_t5 = VideoWriter(const.ml_file_vid_t5{var1,var2,var3,var4},formatVid);
     ml_vid_obj_t5.FrameRate =   66;
 	ml_vid_obj_t5.Quality   =   100;
 end
