@@ -37,6 +37,8 @@ G2 = {'090635065204'}; %
 G3 = {'090635065187'}; % 
 G4 = {'090635059034'}; % 
 
+RunData.RFID.Data(end).ID
+
 if size(TrialRecord.User,1)<30 || length(unique(TrialRecord.User(end-29:end,1)))>1 || (length(unique(TrialRecord.User(end-29:end,1)))==1 && strcmp(TrialRecord.User(end,1),M)==0)
     
     

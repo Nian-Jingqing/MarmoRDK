@@ -20,6 +20,16 @@ function [const] = runExp(scr,const,expDes,my_key)
 % Version :     2.0
 % ----------------------------------------------------------------------
 
+
+% Save all settings
+% -----------------
+config.scr = scr;
+config.const = const;
+config.expDes = expDes;
+config.my_key = my_key;
+save(const.ml_savefile, 'config')
+
+
 % Configuration of videos
 % -----------------------
 if const.mkVideo
@@ -51,5 +61,12 @@ for t_trial = 1:size(expDes.expMat,1)
     runTrials(scr,const,expDes,my_key,t_trial);
 end
 
+% Save all settings
+% -----------------
+config.scr = scr;
+config.const = const;
+config.expDes = expDes;
+config.my_key = my_key;
+save(const.ml_savefile, 'config')
 
 end

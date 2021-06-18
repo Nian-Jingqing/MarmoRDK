@@ -39,9 +39,9 @@ Screen('CloseAll');clear all;clear mex;clear functions;close all;home;AssertOpen
 % General settings
 % ----------------
 const.expName           =   'MarmoRDK';     % experiment name
-const.debug             =   1;              % Debug mode                                0 = YES , 1 = NO
+const.debug             =   0;              % Debug mode                                0 = YES , 1 = NO
 const.mkVideo           =   0;              % Make a video of a run                     0 = NO  , 1 = YES
-const.ml_material       =   1;              % Save images and videos for monleylogic    0 = NO  , 1 = YES
+const.ml_material       =   0;              % Save images and videos for monleylogic    0 = NO  , 1 = YES
 if const.ml_material;const.mkVideo=0;end
 
 % Path

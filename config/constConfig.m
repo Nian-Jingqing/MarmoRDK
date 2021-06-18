@@ -50,6 +50,8 @@ const.signal_nbf        =   53;                                             % si
 const.signal_dur        =   const.signal_nbf*scr.frame_duration;            % signal duration (in seconds)
 const.resp_dur          =   1;                                              % response duration (in seconds)
 const.resp_nbf          =   66;                                             % response duration (in frames)
+const.press_dur         =   5;                                              % waiting period before end of trial
+const.no_touch_iti      =   1 ;                                             % no touch inter trial interval (in seconds)
 
 const.reward1_dur       =   1;                                              % reward #1 duration (in seconds)
 const.reward1_nbf       =   round(const.reward1_dur/scr.frame_duration);    % reward #1 duration (in frames)
@@ -126,9 +128,55 @@ const.button_rim_rad    =   const.button_out_rim_rad - ...
 const.button_color      =   const.white;                                    % button color
 const.button_ctr_XVal   =   0;                                              % stim center X position relative screen center (dva)
 const.button_ctr_YVal   =   0;                                              % stim center Y position relative screen center (dva)
-const.button_ctr_X      =   vaDeg2pix(const.button_ctr_XVal,scr);             % stim center X position relative screen center (pixels)
-[~,const.button_ctr_Y]  =   vaDeg2pix(const.button_ctr_YVal,scr);             % stim center Y position relative screen center (pixels)
+const.button_ctr_X      =   vaDeg2pix(const.button_ctr_XVal,scr);           % stim center X position relative screen center (pixels)
+[~,const.button_ctr_Y]  =   vaDeg2pix(const.button_ctr_YVal,scr);           % stim center Y position relative screen center (pixels)
 const.button_coords     =   [scr.x_mid-const.button_ctr_X,...
                              scr.y_mid-const.button_ctr_Y];                 % stimulus coordinates
+
+%% Monkeylogic settings                         
+% taskobjects
+const.button_t1_obj = 1;                                                    % button start task object
+const.movie_t1_obj = 2;                                                     % movie t1 taskobject number
+const.movie_t2_obj = 3;                                                     % movie t2 taskobject number
+const.movie_t3_obj = 4;                                                     % movie t3 taskobject number
+const.button_cor_t4_obj = 5;                                                % button correct t4 taskobject number
+const.button_inc_t4_obj = 6;                                                % button incorrect t4 taskobject number
+const.movie_t4_obj = 7;                                                     % movie t4 taskobject number
+const.movie_t5_obj = 8;                                                     % movie t4 taskobject number
+
+% buttons
+const.button_touch_rad = 0;                                                 % button touch radius
+const.button_t1_tmax = const.press_dur*1000;                                % button start max duration in milliseconds
+const.button_t4_tmax = const.resp_dur*1000;                                 % buttons reponse max duration in milliseconds
+
+% rewards
+const.reward1_dur = const.reward1_dur*1000;                                 % reward duration in milliseconds
+const.reward2_dur = const.reward2_dur*1000;                                 % reward duration in milliseconds
+const.reward_nonblocking = 0;                                               % deliver reward in the background (0 = no, 1 = yes, 2 =yes more precise timing)
+
+% triggers
+const.start_trigger = 1;                                                    % start trial
+const.end_trigger = 2;                                                      % end trial
+const.t1_trigger = 3;                                                       % t1 onset
+const.t2_trigger = 4;                                                       % t2 onset
+const.t3_trigger = 4;                                                       % t3 onset
+const.t4_trigger = 5;                                                       % t4 onset
+const.t5_trigger = 6;                                                       % t5 onset
+const.cor_trigger = 7;                                                      % correct button press
+const.inc_trigger = 8;                                                      % incorrect button press
+const.noresp_trigger = 9;                                                   % no response
+const.notouch_trigger = 10;                                                 % no touch
+
+% trialerror code
+const.cor_code = 0;                                                         % correct response
+const.no_resp_code = 1;                                                     % no response
+const.late_code = 2;                                                        % too late
+const.break_fix_code = 3;                                                   % break fixation
+const.no_fix_code = 4;                                                      % no fixation
+const.early_resp_code = 5;                                                  % early response
+const.inc_code = 6;                                                         % incorrect response
+const.lever_break_code = 7;                                                 % lever break
+const.ignored_code = 8;                                                     % ignored
+const.aborted_code = 9;                                                     % aborted
 
 end

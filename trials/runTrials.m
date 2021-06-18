@@ -30,11 +30,11 @@ var4 = expDes.expMat(t_trial,4);    % signal example
 rdk = const.rdk{var1,var2,var3,var4};
 if const.ml_material
     formatVid = 'Motion JPEG AVI';
-    ml_vid_obj_t1 = VideoWriter(const.ml_file_vid_t1{var1,var2,var3,var4},formatVid);
+    ml_vid_obj_t1 = VideoWriter(const.ml_file_vid_t1,formatVid);
     ml_vid_obj_t1.FrameRate =   66;
 	ml_vid_obj_t1.Quality   =   100;
     
-    ml_vid_obj_t2 = VideoWriter(const.ml_file_vid_t2{var1,var2,var3,var4},formatVid);
+    ml_vid_obj_t2 = VideoWriter(const.ml_file_vid_t2,formatVid);
     ml_vid_obj_t2.FrameRate =   66;
 	ml_vid_obj_t2.Quality   =   100;
     
@@ -42,15 +42,14 @@ if const.ml_material
     ml_vid_obj_t3.FrameRate =   66;
 	ml_vid_obj_t3.Quality   =   100;
     
-    ml_vid_obj_t4 = VideoWriter(const.ml_file_vid_t4{var1,var2,var3,var4},formatVid);
+    ml_vid_obj_t4 = VideoWriter(const.ml_file_vid_t4,formatVid);
     ml_vid_obj_t4.FrameRate =   66;
 	ml_vid_obj_t4.Quality   =   100;
     
-    ml_vid_obj_t5 = VideoWriter(const.ml_file_vid_t5{var1,var2,var3,var4},formatVid);
+    ml_vid_obj_t5 = VideoWriter(const.ml_file_vid_t5,formatVid);
     ml_vid_obj_t5.FrameRate =   66;
 	ml_vid_obj_t5.Quality   =   100;
 end
-
 
 % Draw button press
 % -----------------
@@ -87,14 +86,17 @@ while ~press_button_start
         imwrite(image_vid,sprintf('%s_frame_%i.png',const.movie_image_file,vid_num))
         writeVideo(const.vid_obj,image_vid);
     end
-    if const.ml_material
+    if const.ml_material 
         press_space = 1;
-        image_vid = Screen('GetImage', scr.main);
-        if press_space == 1
-            open(ml_vid_obj_t1);
-            writeVideo(ml_vid_obj_t1,image_vid);
+        if t_trial == 1
+            image_vid = Screen('GetImage', scr.main);
+            image_vid = imresize(image_vid,[scr.vid_sizeY,scr.vid_sizeX]);
+            if press_space == 1
+                open(ml_vid_obj_t1);
+                writeVideo(ml_vid_obj_t1,image_vid);
+            end
+            close(ml_vid_obj_t1);
         end
-        close(ml_vid_obj_t1);
     end
 end
 
@@ -112,9 +114,10 @@ for nbf = 1:const.reward1_nbf
         writeVideo(const.vid_obj,image_vid);
     end
     
-    if const.ml_material
+    if const.ml_material && t_trial == 1
         open(ml_vid_obj_t2);
         image_vid = Screen('GetImage', scr.main);
+        image_vid = imresize(image_vid,[scr.vid_sizeY,scr.vid_sizeX]);
         writeVideo(ml_vid_obj_t2,image_vid);
         close(ml_vid_obj_t2);
         break
@@ -139,6 +142,7 @@ for nbf = 1:size(rdk.posi,2)
             open(ml_vid_obj_t3);
         end
         image_vid = Screen('GetImage', scr.main);
+        image_vid = imresize(image_vid,[scr.vid_sizeY,scr.vid_sizeX]);
         writeVideo(ml_vid_obj_t3,image_vid);
         if nbf == size(rdk.posi,2)
             close(ml_vid_obj_t3);
@@ -195,13 +199,16 @@ while ~press_button_start
     end
     
     if const.ml_material
-        open(ml_vid_obj_t4);
         press_button_start = 1;
-        image_vid = Screen('GetImage', scr.main);
-        if press_button_start == 1
-            writeVideo(ml_vid_obj_t4,image_vid);
+        if t_trial == 1
+            open(ml_vid_obj_t4);
+            image_vid = Screen('GetImage', scr.main);
+            image_vid = imresize(image_vid,[scr.vid_sizeY,scr.vid_sizeX]);
+            if press_button_start == 1
+                writeVideo(ml_vid_obj_t4,image_vid);
+            end
+            close(ml_vid_obj_t4);
         end
-        close(ml_vid_obj_t4);
     end
 end
 
@@ -218,10 +225,10 @@ for nbf = 1:const.reward2_nbf
         writeVideo(const.vid_obj,image_vid);
     end
     
-    
-    if const.ml_material
+    if const.ml_material && t_trial == 1
         open(ml_vid_obj_t5);
         image_vid = Screen('GetImage', scr.main);
+        image_vid = imresize(image_vid,[scr.vid_sizeY,scr.vid_sizeX]);
         writeVideo(ml_vid_obj_t5,image_vid);
         if nbf == size(rdk.posi,2)
             close(ml_vid_obj_t5);

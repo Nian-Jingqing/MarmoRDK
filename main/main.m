@@ -41,7 +41,7 @@ tic;
 
 % Open screen window
 % ------------------
-[scr.main,scr.rect]     =   Screen('OpenWindow',scr.scr_num,const.background_color,[0,0,scr.scr_sizeX,scr.scr_sizeY], scr.clr_depth,2);
+[scr.main,scr.rect]     =   Screen('OpenWindow',scr.scr_num,const.background_color,[], scr.clr_depth,2);
 [~]                     =   Screen('BlendFunction', scr.main, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 priorityLevel           =   MaxPriority(scr.main);Priority(priorityLevel);
 

@@ -25,6 +25,8 @@ scr.scr_num             =   max(scr.all);
 scr.scr_sizeX           =   480;    % ~ 73 dva
 scr.scr_sizeY           =   800;    % ~ 122 dva (only 1/2 top usable ~61 dva)
 scr.rect                =   [0,0,480,800];
+scr.vid_sizeX           =   480;
+scr.vid_sizeY           =   800;
 
 % Settings Noritake screen
 scr.disp_sizeX          =   85.92;

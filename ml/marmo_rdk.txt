@@ -1,0 +1,3 @@
+Condition	Info														Frequency	Block	Timing File	TaskObject#1			TaskObject#2		TaskObject#3		TaskObject#4							TaskObject#5			TaskObject#6			TaskObject#7			TaskObject#8
+1			'direction','right','soa',500,'coherence',5,'stim_num',1	1			1		marmo_rdk	crc(20,[1,1,1],1,0,0)	mov(vid_t1,0,0,1)	mov(vid_t2,0,0,1)	mov(vid_t3_v1-1_v2-5_v3-5_v4-1,0,0)	crc(20,[1,1,1],1,20,0)	crc(20,[1,1,1],1,-20,0)	mov(vid_t4,0,0,1)		mov(vid_t5,0,0,1)
+2			'direction','left','soa',500,'coherence',5,'stim_num',1		1			1		marmo_rdk	crc(20,[1,1,1],1,0,0)	mov(vid_t1,0,0,1)	mov(vid_t2,0,0,1)	mov(vid_t3_v1-2_v2-5_v3-5_v4-1,0,0)	crc(20,[1,1,1],1,-20,0)	crc(20,[1,1,1],1,20,0)	mov(vid_t4,0,0,1)		mov(vid_t5,0,0,1)

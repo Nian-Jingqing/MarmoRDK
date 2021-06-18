@@ -25,6 +25,6 @@ if const.mkVideo
 end
 
 % monkeylogic condition file
-const.ml_cond_file          =   sprintf('ml/%s.mat',const.expName);
+const.ml_savefile = sprintf('ml/%s.mat',const.expName);
 
 end

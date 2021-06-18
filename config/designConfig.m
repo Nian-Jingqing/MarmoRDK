@@ -21,7 +21,7 @@ function [expDes,const]=designConfig(const)
 %% Experimental random variables
 rng('default');rng('shuffle');
 
-% Var 1 : stim orientation (2 modalities)
+% Var 1 : mvt direction (2 modalities)
 % ===== 
 expDes.oneV             =   [1;2];
 expDes.txt_var1         =   {'0 deg','180 deg'};
@@ -81,33 +81,24 @@ if const.mkVideo
     end_filename = '';
     for var_num = 1:expDes.numVar
         expDes.expMat(1,var_num) = input(sprintf('\nVar %i : ',var_num));
-        end_filename = strcat(end_filename,sprintf('_var%i-%i',var_num,expDes.expMat(1,var_num)));
-
+        end_filename = strcat(end_filename,sprintf('_v%i-%i',var_num,expDes.expMat(1,var_num)));
     end
     const.movie_image_file  =   sprintf('others/vid/vid%s',end_filename);
     const.movie_file        =   sprintf('others/vid%s.mp4',end_filename);
 end
 
+const.ml_file_vid_t1 = 'ml/vid_t1.avi'; % wait touch
+const.ml_file_vid_t2 = 'ml/vid_t2.avi'; % fix feedback
+const.ml_file_vid_t4 = 'ml/vid_t4.avi'; % button response
+const.ml_file_vid_t5 = 'ml/vid_t5.avi'; % button response
+
 if const.ml_material
     for var1 = 1:numel(expDes.oneV)
         for var2 = 1:numel(expDes.twoV)
             for var3 = 1:numel(expDes.threeV)
-                for var4 = 1:numel(expDes.fourV)
-                    
-                    dir_filename = sprintf('ml/var1-%i-var2-%i-var3-%i-var4-%i',var1,var2,var3,var4);
-                    dir_filename2 = sprintf('ml/var1-%i-var2-%i-var3-%i-var4-%i',var1,var2,var3,var4);
-                    
-                    if ~isdir(dir_filename)
-                        mkdir(dir_filename)
-                    end                    
-                    if ~isdir(dir_filename2)
-                        mkdir(dir_filename2)
-                    end
-                    const.ml_file_vid_t1{var1,var2,var3,var4} = sprintf('%s/vid_t1.avi',dir_filename);   % wait touch
-                    const.ml_file_vid_t2{var1,var2,var3,var4} = sprintf('%s/vid_t2.avi',dir_filename);   % fix feedback
-                    const.ml_file_vid_t3{var1,var2,var3,var4} = sprintf('%s/vid_t3.avi',dir_filename);   % rdk vid
-                    const.ml_file_vid_t4{var1,var2,var3,var4} = sprintf('%s/vid_t4.avi',dir_filename);   % button response
-                    const.ml_file_vid_t5{var1,var2,var3,var4} = sprintf('%s/vid_t5.avi',dir_filename);   % button response
+                for var4 = 1:numel(expDes.fourV)                    
+                    vid_filename = sprintf('vid_t3_v1-%i_v2-%i_v3-%i_v4-%i',var1,var2,var3,var4);
+                    const.ml_file_vid_t3{var1,var2,var3,var4} = sprintf('ml/%s.avi',vid_filename);   % rdk vid   
                 end
             end
         end
